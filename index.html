@@ -156,6 +156,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </body>
+<script>
+//form error tracking
+var a=$(".btn btn-info").click(function(){
+setTimeout(function () {
+var a=$(".form-group>div>p").is(":visible")
+if(a==true)
+{
+var errortext = $(".form-group>div>p:visible").text();
+console.log(errortext)
+dataLayer.push({"event":"formError","error_text":errortext });
+}
+},500)
+})
+</script>
 
 <script>  
 function validateform(){  
